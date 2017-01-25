@@ -1,0 +1,7 @@
+.vagrant
+.svn
+certs/*.key
+certs/*.crt
+certs/*.pfx
+certs/*.csr
+certs/*.srl

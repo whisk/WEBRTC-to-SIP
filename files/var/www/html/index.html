@@ -1,0 +1,50 @@
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>FosSip</title>
+   <link rel="stylesheet" href="include/style.css">
+</head>
+
+  <body>
+    <audio id="audio-remote"></audio>
+    <!-- Configuration Prompt -->
+    <form id="config-form" action="">
+      <input type="submit" name="configSubmit" value="Start Client">
+    </form>
+
+    <!-- UA Control Form -->
+    <div id="ua">
+      <div id="ua-status">Disconnected</div>
+      <button id="ua-register">Register</button>
+      <form id="new-session-form" action="">
+        <label>SIP URI      <input type="text" id="ua-uri" placeholder="websip@kamailio.websip.dev"></label>
+        <input type="submit" id="ua-invite-submit" value="Invite">
+        <input type="submit" id="ua-message-submit" value="Begin Chat">
+      </form>
+    </div>
+
+    <ul id="session-list"></ul>
+
+
+    <!-- Templates to clone Sessions and Messages -->
+    <ul id="templates">
+      <li id="session-template" class="template session">
+        <h2><strong class="display-name"></strong> <span class="uri"></span></h2>
+        <button class="green">Green</button>
+        <button class="red">Red</button>
+        <form class="dtmf" action="">
+          <label>DTMF <input type="text" maxlength="1"></label>
+          <input type="submit" value="Send">
+        </form>
+        <ul class="messages"></ul>
+        <form class="message-form" action="">
+          <input type="text" placeholder="Type to send a message"><input type="submit" value="Send">
+        </form>
+      </li>
+    </ul>
+
+    <script src="include/sip-0.7.6.js"></script>
+    <script src="include/ua.js"></script>
+
+</body>
+</html>
